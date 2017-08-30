@@ -3,16 +3,66 @@
     <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>Car Details</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.title}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
+    {{selectedItem.Marque}}&nbsp;{{selectedItem.Modele}}&nbsp;{{selectedItem.Serie}}
+    
   </h3>
-  <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </h4>
+
+  <h3>
+    
+        <ion-badge color="primary">V{{selectedItem.Cylindres}}</ion-badge>
+          <ion-badge color="primary">{{selectedItem.Cylindree}} litres</ion-badge>
+            <ion-badge color="primary">{{selectedItem.Puissance_ch}} ch</ion-badge>
+              <ion-badge color="primary">{{selectedItem.Couple_Nm}} N.m<sup>-1</sup></ion-badge>
+        <!-- a href="{{zeperf_link}}" hrefext class="btn btn-success col-lg-offset-8">get Infos <span class="glyphicon glyphicon-info-sign"></span></a -->
+    
+    </h3>
+
+  <h3>
+    <ion-col col-lg-4>
+      <ion-badge color="dark">Vitesse max&nbsp;</ion-badge>
+      <ion-badge color="danger">{{selectedItem.VitesseMax_Kmh}} km/h</ion-badge>
+    </ion-col>
+<br>
+<ion-col col-lg-3 col-lg-offset-1>
+      <ion-badge color="dark">0-100 km/h&nbsp;</ion-badge>
+        <ion-badge color="danger"> {{selectedItem.acc_0_100}} sec</ion-badge>
+      </ion-col>
+<br>
+<ion-col col-lg-3 col-lg-offset-1>
+      <ion-badge color="dark">400m Da&nbsp;</ion-badge>
+      <ion-badge color="danger"> {{selectedItem.acc_400m_DA}} sec.</ion-badge>
+    </ion-col>
+</h3>
+
+<br>
+
+
+<h3>
+  <ion-col col-lg-4>
+      <ion-badge color="dark">0-200 km/h&nbsp;</ion-badge>
+        <ion-badge color="danger"> {{selectedItem.acc_0_200}} sec.</ion-badge>
+      </ion-col>
+<br>
+    <ion-col col-lg-3 col-lg-offset-1>
+      <ion-badge color="dark">1000m Da&nbsp;</ion-badge>
+        <ion-badge color="danger"> {{selectedItem.acc_1000m_DA}} sec.</ion-badge>
+      </ion-col>
+<br>
+    <ion-col col-lg-3 col-lg-offset-1>
+      <ion-badge color="dark">Prix&nbsp;</ion-badge>
+        <ion-badge color="danger"> {{selectedItem.Prix}} euros </ion-badge>
+      </ion-col>
+</h3>
+
+<br>
+<span>
+    <img [attr.src]="selectedItem.Image">&nbsp;&nbsp;
+</span>
+  
 </ion-content>
