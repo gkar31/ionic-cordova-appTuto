@@ -1,16 +1,17 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>MuscleCars</ion-title>
   </ion-navbar>
+  <script src="cordova.js"></script>
 </ion-header>
-
+ 
 
 <ion-content padding>
 
-  <h3>Welcome to your first Ionic app!</h3>
+  <h3>DragRace Mode</h3>
 
   <p>
     This starter project is our way of helping you get a functional app running in record time.
@@ -19,6 +20,11 @@
     Follow along on the tutorial section of the Ionic docs!
   </p>
   <p>
+    <button ion-button (click)="isSpeechSupported()">Is Speech Supported?</button>
+    <button ion-button (click)="getPermissions()">Permissions</button>
+    <button ion-button (click)="hasPermissions()">Has Permissions?</button>
+    <button ion-button color="danger" (click)="listenForSpeech()">Listen For Speech</button>
+
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 
