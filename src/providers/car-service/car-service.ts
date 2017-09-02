@@ -10,10 +10,12 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class CarServiceProvider {
-  data : any;
+  data : any ;
   constructor(public http: Http) {
     console.log('Hello CarServiceProvider Provider');
   }
+
+
 
 
   getCarsList(){
