@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,8 @@ import { CarServiceProvider } from '../providers/car-service/car-service';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    SettingsPage
   ],
     imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { CarServiceProvider } from '../providers/car-service/car-service';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage, 
+    SettingsPage
   ],
   providers: [
     StatusBar,

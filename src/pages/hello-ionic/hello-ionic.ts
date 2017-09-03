@@ -35,7 +35,7 @@ export class HelloIonicPage {
     Image: String}> =[]; 
 
   constructor(public navCtrl: NavController, private platform: Platform, private carsService: CarServiceProvider, private speech: SpeechRecognition, private changeDetector: ChangeDetectorRef) {
-    /*
+    /*  a commenter 
     this.platform.ready().then(() => {
       this.speech.hasPermission()
         .then((hasPermission: boolean) => {
@@ -48,7 +48,9 @@ export class HelloIonicPage {
 
     this.speech.isRecognitionAvailable()
   .then((available: boolean) => this.isSpeechAvailable = available)
-*/
+ a commenter*/
+
+ 
   this.searchControl = new FormControl();
     carsService.getCarsList()
     .then(data =>{
@@ -166,7 +168,7 @@ public stopListening(): void {
       
       
         return this.dragRaceCarsList.filter((item) => {
-          
+          //console.log("Item :"+item.Marque);
             return item.Marque.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 || item.Modele.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 || item.Serie.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
         });     
  
