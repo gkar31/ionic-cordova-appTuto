@@ -35,7 +35,7 @@ export class HelloIonicPage {
     Image: String}> =[]; 
 
   constructor(public navCtrl: NavController, private platform: Platform, private carsService: CarServiceProvider, private speech: SpeechRecognition, private changeDetector: ChangeDetectorRef) {
-    /*  a commenter 
+    /*  a commenter */
     this.platform.ready().then(() => {
       this.speech.hasPermission()
         .then((hasPermission: boolean) => {
@@ -48,9 +48,9 @@ export class HelloIonicPage {
 
     this.speech.isRecognitionAvailable()
   .then((available: boolean) => this.isSpeechAvailable = available)
- a commenter*/
+ /*a commenter*/
 
- 
+
   this.searchControl = new FormControl();
     carsService.getCarsList()
     .then(data =>{
@@ -92,13 +92,17 @@ export class HelloIonicPage {
 
 
   listenForSpeech():void {
-    this.speech.startListening().subscribe(data => console.log("Speech :"+data), error => console.error("Speech error :"+error));
+    this.speech.startListening().subscribe(data => {
+      console.log("Speech :"+data);
+      this.searchTerm = data[0];
+      this.changeDetector.detectChanges(); 
+    }, error => console.error("Speech error :"+error));
   }
 
 
 public startListening(): void {
   let options = {
-    language: 'en-US',
+    language: 'fr-FR',
     matches: 1,
     prompt: 'Start to speak !',
     showPopup: true,
@@ -114,6 +118,7 @@ public startListening(): void {
       this.isListening = false;
       console.log(matches)
       this.textReco = matches;
+      this.searchTerm = matches[0];
       this.changeDetector.detectChanges();
     },
     (onerror) => {
