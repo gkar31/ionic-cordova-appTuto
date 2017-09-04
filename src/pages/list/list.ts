@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
-import { CarServiceProvider } from '../../providers/car-service/car-service'
+import { CarServiceProvider } from '../../providers/car-service/car-service';
 import { ItemDetailsPage } from '../item-details/item-details';
 
 @Component({
