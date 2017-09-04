@@ -96,6 +96,7 @@ export class HelloIonicPage {
       console.log("Speech :"+data);
       this.searchTerm = data[0];
       this.changeDetector.detectChanges(); 
+      this.setFilteredItems();
     }, error => console.error("Speech error :"+error));
   }
 
@@ -120,6 +121,8 @@ public startListening(): void {
       this.textReco = matches;
       this.searchTerm = matches[0];
       this.changeDetector.detectChanges();
+      this.setFilteredItems();
+      
     },
     (onerror) => {
       this.isListening = false;
