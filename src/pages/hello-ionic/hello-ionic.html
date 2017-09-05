@@ -12,7 +12,7 @@
 <ion-content padding>
 
   <h3>DragRace Mode</h3>
-  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" ></ion-searchbar>
 
    <div *ngIf="searching" class="spinner-container">
         <ion-spinner></ion-spinner>

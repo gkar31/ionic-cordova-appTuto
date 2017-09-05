@@ -16,5 +16,84 @@
 </ion-header>
 
 <ion-content padding>
+  <h1 color="primary">Reference Car</h1>
 
-</ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+          <ion-item>
+                <ion-input type="number" [(ngModel)]="refCar.Indice_Perf" name="Indice_Perf" placeholder="Indice Perf (zePerf.com)"></ion-input>
+            </ion-item>
+    
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-item>
+          <ion-input type="number" [(ngModel)]="refCar.Cylindres" name="cylindres" placeholder="Cylindres"></ion-input>
+        </ion-item> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <ion-item>
+      <ion-label>Cylindree (cm3)</ion-label>
+        <ion-input type="number" [(ngModel)]="refCar.Cylindree" name="cylindree"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-8>
+          <ion-item>
+           
+              <ion-input type="number" [(ngModel)]="refCar.Puissance_ch" name="puissance" placeholder="Puissance (Ch/Hp)"></ion-input>
+          </ion-item>
+        </ion-col>
+        
+        <ion-col col-4>
+          <ion-item>
+              <ion-input type="number" [(ngModel)]="refCar.Couple_Nm" name="couple" placeholder="Couple (N.m-1)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+    <ion-item>
+        <ion-label>V. Max</ion-label>
+        <ion-input type="number" [(ngModel)]="refCar.VitesseMax_Kmh" name="vmax"></ion-input>
+    </ion-item> 
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+              <ion-input type="number" [(ngModel)]="refCar.acc_0_100" name="acc_0_100" placeholder="acc. 0-100"></ion-input>
+          </ion-item>
+        </ion-col>
+        
+        <ion-col col-6>
+          <ion-item>
+              <ion-input type="number" [(ngModel)]="refCar.acc_0_200" name="acc_0_200" placeholder="acc. 0-200"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label>400m DA</ion-label>
+            <ion-input type="number" [(ngModel)]="refCar.acc_400m_DA" name="acc_400_da"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+          <ion-item>
+          <ion-label>1000m DA</ion-label>
+            <ion-input type="number" [(ngModel)]="refCar.acc_1000m_DA" name="acc_1000_da"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+      </ion-grid>
+  
+      
+
+        <button ion-button full color="danger" (tap)="saveReferenceCar()">Save</button>
+        <button ion-button full color="primary">Retour</button>
+  </ion-content>

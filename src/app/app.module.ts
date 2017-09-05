@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+
+// Native Components
+  import { NativeStorage } from '@ionic-native/native-storage';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { MyApp } from './app.component';
 
@@ -40,6 +43,7 @@ import { CarServiceProvider } from '../providers/car-service/car-service';
     StatusBar,
     SplashScreen,
     SpeechRecognition,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CarServiceProvider
   ]
