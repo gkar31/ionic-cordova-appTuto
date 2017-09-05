@@ -19,16 +19,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingsPage {
   refCar={
-  Cylindres:0  ,
-  Cylindree : 0,
-  Puissance_ch : 0,
-  Couple_Nm : 0,
-  VitesseMax_Kmh : 0,
-  acc_0_100 : 0,
-  acc_400m_DA : 0,
-  acc_0_200 : 0,
-  acc_1000m_DA : 0,
-  Indice_Perf : 0  
+  Cylindres:  Number,
+  Cylindree : Number,
+  Puissance_ch : Number,
+  Couple_Nm : Number,
+  VitesseMax_Kmh : Number,
+  acc_0_100 : Number,
+  acc_400m_DA : Number,
+  acc_0_200 : Number,
+  acc_1000m_DA : Number,
+  Indice_Perf : Number  
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage) {

@@ -21,9 +21,7 @@
   <button ion-button [color]="(isListening) ? 'danger' : 'secondary'" (click)="(isListening) ? stopListening() : startListening()">Speech to Text</button>
 
   <ion-list class="match-wrapper">
-    <ion-item *ngIf="textReco.length <=0">
-      Aucun resultat !!!
-    </ion-item>
+   
     
     <ion-item *ngFor="let match of textReco">
       {{ match }}
@@ -31,15 +29,7 @@
   </ion-list>
 <br>
 <br>
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+  
 
   <ion-list>
     <ion-item ion-item *ngFor="let car of dragRaceCarsList" (click)="itemTapped($event, car)">
