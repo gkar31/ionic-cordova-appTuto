@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 
-  // Native Components
-  import { NativeStorage } from '@ionic-native/native-storage';
+// Native Components
+import { NativeStorage } from '@ionic-native/native-storage';
 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { CarServiceProvider } from '../../providers/car-service/car-service';
+import { RaceResultPage } from '../race-result/race-result';
+
 
 /**
  * Generated class for the SettingsPage page.
@@ -30,16 +34,22 @@ export class SettingsPage {
   acc_1000m_DA : Number,
   Indice_Perf : Number  
   }
+  
+  prefSpeedUnit="";
+  prefCoupleUnit="";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage) {
       
   }
 
-  ionViewDidLoad() {
+  
+ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
     this.loadReferenceCar();
   }
 
+
+  
 
   saveReferenceCar():void {
     this.nativeStorage.setItem('MC-RefCar', {refCar: this.refCar})
@@ -62,4 +72,7 @@ export class SettingsPage {
     error => console.error(error)
   );
   }
+
+
+  
 }

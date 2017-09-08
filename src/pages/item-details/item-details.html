@@ -8,10 +8,9 @@
 </ion-header>
 
 <ion-content>
-  <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.Marque}}&nbsp;{{selectedItem.Modele}}&nbsp;{{selectedItem.Serie}}
-    
-  </h3>
+  <div text-center *ngIf="selectedItem" >
+   <button ion-button full>{{selectedItem.Marque}}&nbsp;{{selectedItem.Modele}}&nbsp;{{selectedItem.Serie}}</button>
+  </div>
 
   <h3>
     

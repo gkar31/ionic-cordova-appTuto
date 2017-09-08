@@ -8,10 +8,13 @@ import { HttpModule } from '@angular/http';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { MyApp } from './app.component';
 
+// Pages
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { SettingsPage } from '../pages/settings/settings';
+import { RaceResultPage } from '../pages/race-result/race-result'
+ 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +27,8 @@ import { CarServiceProvider } from '../providers/car-service/car-service';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    SettingsPage
+    SettingsPage,
+    RaceResultPage
   ],
     imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { CarServiceProvider } from '../providers/car-service/car-service';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage, 
-    SettingsPage
+    SettingsPage,
+    RaceResultPage
   ],
   providers: [
     StatusBar,

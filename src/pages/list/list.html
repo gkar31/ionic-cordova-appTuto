@@ -9,11 +9,15 @@
 
 <ion-content>
   <ion-list>
+    <ion-list-header color="primary">Modele&nbsp; <div class="item-note" item-right>
+        Ind. Perf
+      </div></ion-list-header>
     <button ion-item *ngFor="let car of carsList" (click)="itemTapped($event, car)">
       {{car.Marque}}
       {{car.Modele}}
+      {{car.Serie}}
       <div class="item-note" item-right>
-        {{car.Serie}}
+        {{car.Indice_Perf}}
       </div>
     </button>
   </ion-list>

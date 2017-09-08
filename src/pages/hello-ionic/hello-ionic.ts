@@ -3,7 +3,12 @@ import { FormControl } from '@angular/forms';
 import { NavController , Platform} from 'ionic-angular';
 import { CarServiceProvider } from '../../providers/car-service/car-service';
 
-import {SpeechRecognition} from '@ionic-native/speech-recognition';
+// Native Components
+import { NativeStorage } from '@ionic-native/native-storage';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+
+import { RaceResultPage } from '../race-result/race-result';
+
 
 @Component({
   selector: 'page-hello-ionic',
@@ -33,9 +38,24 @@ export class HelloIonicPage {
     Prix : String,
     Indice_Perf : Number,
     Image: String}> =[]; 
+    
+    refCar={
+      Cylindres:  Number,
+      Cylindree : Number,
+      Puissance_ch : Number,
+      Couple_Nm : Number,
+      VitesseMax_Kmh : Number,
+      acc_0_100 : Number,
+      acc_400m_DA : Number,
+      acc_0_200 : Number,
+      acc_1000m_DA : Number,
+      Indice_Perf : Number  
+  }
 
-  constructor(public navCtrl: NavController, private platform: Platform, private carsService: CarServiceProvider, private speech: SpeechRecognition, private changeDetector: ChangeDetectorRef) {
+  constructor(public navCtrl: NavController, private platform: Platform, private carsService: CarServiceProvider, private speech: SpeechRecognition, private changeDetector: ChangeDetectorRef,  private nativeStorage: NativeStorage) {
     /*  a commenter */
+    this.loadReferenceCar();
+    
     this.platform.ready().then(() => {
       this.speech.hasPermission()
         .then((hasPermission: boolean) => {
@@ -181,4 +201,26 @@ public stopListening(): void {
         });     
  
     }
+
+
+
+loadReferenceCar():void {
+    this.nativeStorage.getItem('MC-RefCar')
+  .then(
+    data => {
+      console.log("refCra :"+data);
+      if(data){
+      this.refCar = data.refCar;
+      }
+    },
+    error => console.error(error)
+  );
+  }
+
+itemTapped(event, item, refCar) {
+    this.navCtrl.push(RaceResultPage, {
+      item: item,
+      refCar: refCar
+    });
+  }
 }

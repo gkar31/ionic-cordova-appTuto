@@ -4,6 +4,8 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>MuscleCars</ion-title>
+    
+    
   </ion-navbar>
   <script src="cordova.js"></script>
 </ion-header>
@@ -11,7 +13,7 @@
 
 <ion-content padding>
 
-  <h3>DragRace Mode</h3>
+  <h3>DragRace Mode&nbsp; <ion-icon *ngIf="refCar" name="car"></ion-icon></h3>
   <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" ></ion-searchbar>
 
    <div *ngIf="searching" class="spinner-container">
@@ -32,13 +34,13 @@
   
 
   <ion-list>
-    <ion-item ion-item *ngFor="let car of dragRaceCarsList" (click)="itemTapped($event, car)">
+    <button ion-item *ngFor="let car of dragRaceCarsList" (click)="itemTapped($event, car, refCar)">
       {{car.Marque}}
       {{car.Modele}}
       {{car.Serie}}
       <div class="item-note" item-right>
         {{car.Indice_Perf}}
       </div>
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>
