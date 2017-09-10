@@ -44,7 +44,7 @@
     <ion-col>
       <ion-badge ion-button  [color]="getDragRaceCoupleClass(dragRaceResults.Couple_Nm)">{{opponentCar.Couple_Nm}} N.m</ion-badge>
     </ion-col> 
-    <ion-col *ngIf="refCar.Cylindres>0">
+    <ion-col *ngIf="refCar.Couple_Nm>0">
       <ion-badge ion-button  color="light" *ngIf="refCar">{{refCar.Couple_Nm}} N.m</ion-badge>
     </ion-col> 
    </ion-row>
@@ -55,10 +55,10 @@
       <ion-badge ion-button color="dark">Vit. Max&nbsp;</ion-badge>
     </ion-col>
     <ion-col>
-      <ion-badge ion-button  [color]="getDragRaceVmaxClass(dragRaceResults.Vmax)">{{opponentCar.VitesseMax_Kmh}} N.m</ion-badge>
+      <ion-badge ion-button  [color]="getDragRaceVmaxClass(dragRaceResults.Vmax)">{{opponentCar.VitesseMax_Kmh}} Km/h</ion-badge>
     </ion-col> 
     <ion-col *ngIf="refCar.VitesseMax_Kmh>0">
-      <ion-badge ion-button  color="light" *ngIf="refCar">{{refCar.VitesseMax_Kmh}} N.m</ion-badge>
+      <ion-badge ion-button  color="light" *ngIf="refCar">{{refCar.VitesseMax_Kmh}} Km/h</ion-badge>
     </ion-col> 
    </ion-row>
 

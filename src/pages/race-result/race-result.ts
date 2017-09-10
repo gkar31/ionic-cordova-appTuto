@@ -79,6 +79,11 @@ export class RaceResultPage {
       this.dragRaceResults.Couple_Nm=this.opponentCar.Couple_Nm - this.refCar.Couple_Nm;
       this.dragRaceResults.acc_0_100=this.opponentCar.acc_0_100 - this.refCar.acc_0_100;
       this.dragRaceResults.acc_400m_DA=this.opponentCar.acc_400m_DA - this.refCar.acc_400m_DA;
+      console.log("Opponent 400 DA :"+this.opponentCar.acc_400m_DA);
+      console.log("RefCar 400 DA :"+this.refCar.acc_400m_DA);
+      console.log("Race result 400 DA :"+this.dragRaceResults.acc_400m_DA);
+      
+      
       this.dragRaceResults.acc_0_200=this.opponentCar.acc_0_200 - this.refCar.acc_0_200;
       this.dragRaceResults.acc_1000m_DA=this.opponentCar.acc_1000m_DA - this.refCar.acc_1000m_DA;
 
@@ -98,12 +103,12 @@ export class RaceResultPage {
 getDragRaceAcc0100Class(value):string {
         var vclass="";
         console.info("acc0100Class in:"+value);
-        if (! value){
+        if (! value && value!=0){
             console.info("undefined");
             vclass="dark";
         }else{
 
-            if (value < 0) {
+            if (value < -1) {
                 console.info("Positif");
                 vclass="danger";
             }else{
@@ -119,12 +124,12 @@ getDragRaceAcc0100Class(value):string {
 getDragRaceAcc0200Class(value):string {
         var vclass="";
         console.info("acc0200Class in:"+value);
-        if (! value){
+        if (! value && value!=0){
             console.info("undefined");
             vclass="dark";
         }else{
 
-            if (value < 0) {
+            if (value < -1) {
                 console.info("Positif");
                 vclass="danger";
             }else{
@@ -140,12 +145,12 @@ getDragRaceAcc0200Class(value):string {
     getDragRaceAcc400mDaClass(value):string {
         var vclass="";
         console.info("acc400mDaClass in:"+value);
-        if (! value){
-            console.info("undefined");
+        if (!value && value!=0){
+            console.info("undefined :"+value+" opp :"+this.opponentCar.acc_400m_DA+" - refCar :"+this.refCar.acc_400m_DA);
             vclass="dark";
         }else{
 
-            if (value < 0) {
+            if (value < -1) {
                 console.info("Positif");
                 vclass="danger";
             }else{

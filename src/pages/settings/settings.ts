@@ -5,8 +5,6 @@ import { NativeStorage } from '@ionic-native/native-storage';
 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { CarServiceProvider } from '../../providers/car-service/car-service';
-import { RaceResultPage } from '../race-result/race-result';
 
 
 /**
