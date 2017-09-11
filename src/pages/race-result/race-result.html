@@ -45,20 +45,20 @@
       <ion-badge ion-button  [color]="getDragRaceCoupleClass(dragRaceResults.Couple_Nm)">{{opponentCar.Couple_Nm}} N.m</ion-badge>
     </ion-col> 
     <ion-col *ngIf="refCar.Couple_Nm>0">
-      <ion-badge ion-button  color="light" *ngIf="refCar">{{refCar.Couple_Nm}} N.m</ion-badge>
+      <ion-badge   color="light" *ngIf="refCar">{{refCar.Couple_Nm}} N.m</ion-badge>
     </ion-col> 
    </ion-row>
 
 
   <ion-row>
-    <ion-col>
+    <ion-col col-lg-4 col-md-4>
       <ion-badge ion-button color="dark">Vit. Max&nbsp;</ion-badge>
     </ion-col>
-    <ion-col>
+    <ion-col col-lg-4 col-md-4>
       <ion-badge ion-button  [color]="getDragRaceVmaxClass(dragRaceResults.Vmax)">{{opponentCar.VitesseMax_Kmh}} Km/h</ion-badge>
     </ion-col> 
-    <ion-col *ngIf="refCar.VitesseMax_Kmh>0">
-      <ion-badge ion-button  color="light" *ngIf="refCar">{{refCar.VitesseMax_Kmh}} Km/h</ion-badge>
+    <ion-col *ngIf="refCar.VitesseMax_Kmh>0"  col-lg-4 col-md-4>
+      <ion-badge  color="light" *ngIf="refCar">{{refCar.VitesseMax_Kmh}} Km/h</ion-badge>
     </ion-col> 
    </ion-row>
 
@@ -70,7 +70,7 @@
       <ion-badge ion-button  [color]="getDragRaceAcc0100Class(dragRaceResults.acc_0_100)">{{opponentCar.acc_0_100}} sec.</ion-badge>
     </ion-col> 
     <ion-col *ngIf="refCar.Cylindres>0">
-      <ion-badge ion-button color="light" *ngIf="refCar">{{refCar.acc_0_100}} sec.</ion-badge>
+      <ion-badge color="light" *ngIf="refCar">{{refCar.acc_0_100}} sec.</ion-badge>
     </ion-col> 
    </ion-row>
   <ion-row>
@@ -81,7 +81,7 @@
       <ion-badge ion-button  [color]="getDragRaceAcc0200Class(dragRaceResults.acc_0_200)">{{opponentCar.acc_0_200}} sec.</ion-badge>
     </ion-col> 
     <ion-col *ngIf="refCar.Cylindres>0">
-      <ion-badge ion-button color="light" color="light" *ngIf="refCar">{{refCar.acc_0_200}} sec.</ion-badge>
+      <ion-badge  color="light" color="light" *ngIf="refCar">{{refCar.acc_0_200}} sec.</ion-badge>
     </ion-col> 
    </ion-row>
 
@@ -93,18 +93,18 @@
       <ion-badge ion-button  [color]="getDragRaceAcc400mDaClass(dragRaceResults.acc_400m_DA)">{{opponentCar.acc_400m_DA}} sec.</ion-badge>
     </ion-col> 
     <ion-col *ngIf="refCar.acc_400m_DA >0">
-      <ion-badge ion-button color="light" *ngIf="refCar">{{refCar.acc_400m_DA}} sec.</ion-badge>
+      <ion-badge  color="light" *ngIf="refCar">{{refCar.acc_400m_DA}} sec.</ion-badge>
     </ion-col> 
    </ion-row>
   <ion-row>
     <ion-col>
-      <ion-badge ion-button color="dark">0-200 km/h&nbsp;</ion-badge>
+      <ion-badge ion-button color="dark">0-200 km/h</ion-badge>
     </ion-col>
     <ion-col>
       <ion-badge ion-button  [color]="getDragRaceAcc0200Class(dragRaceResults.acc_0_200)">{{opponentCar.acc_0_200}} sec.</ion-badge>
     </ion-col> 
     <ion-col *ngIf="refCar.Cylindres>0">
-      <ion-badge ion-button color="light" color="light" *ngIf="refCar">{{refCar.acc_0_200}} sec.</ion-badge>
+      <ion-badge  color="light" color="light" *ngIf="refCar">{{refCar.acc_0_200}} sec.</ion-badge>
     </ion-col> 
    </ion-row>   
 
@@ -116,7 +116,7 @@
       <ion-badge ion-button  [color]="getDragRaceAcc400mDaClass(dragRaceResults.acc_1000m_DA)">{{opponentCar.acc_1000m_DA}} sec.</ion-badge>
     </ion-col> 
     <ion-col *ngIf="refCar.acc_1000m_DA >0">
-      <ion-badge ion-button color="light" *ngIf="refCar">{{refCar.acc_1000m_DA}} sec.</ion-badge>
+      <ion-badge  color="light" *ngIf="refCar">{{refCar.acc_1000m_DA}} sec.</ion-badge>
     </ion-col> 
    </ion-row>
 
