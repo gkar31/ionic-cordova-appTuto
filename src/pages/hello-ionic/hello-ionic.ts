@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { NavController , Platform} from 'ionic-angular';
+import { NavController , Platform, LoadingController} from 'ionic-angular';
 import { CarServiceProvider } from '../../providers/car-service/car-service';
 
 // Native Components
@@ -52,8 +52,9 @@ export class HelloIonicPage {
       Indice_Perf : Number  
   }
 
-  constructor(public navCtrl: NavController, private platform: Platform, private carsService: CarServiceProvider, private speech: SpeechRecognition, private changeDetector: ChangeDetectorRef,  private nativeStorage: NativeStorage) {
+  constructor(public navCtrl: NavController, private platform: Platform, public loadingController: LoadingController, private carsService: CarServiceProvider, private speech: SpeechRecognition, private changeDetector: ChangeDetectorRef,  private nativeStorage: NativeStorage) {
     /*  a commenter */
+
     this.loadReferenceCar();
     
     this.platform.ready().then(() => {
@@ -72,6 +73,15 @@ export class HelloIonicPage {
 
 
   this.searchControl = new FormControl();
+
+  //Loading Spinner
+  let loading = this.loadingController.create({
+    spinner: 'bubbles',
+    content: 'Loading...'
+  });
+
+  loading.present();
+
     carsService.getCarsList()
     .then(data =>{
       console.log("DragRace CarsService Then");
@@ -79,6 +89,7 @@ export class HelloIonicPage {
       
       
       this.dragRaceCarsList = data;
+      loading.dismiss();
     })
 
   }

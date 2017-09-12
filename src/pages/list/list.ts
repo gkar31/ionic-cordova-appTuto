@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { CarServiceProvider } from '../../providers/car-service/car-service';
 import { ItemDetailsPage } from '../item-details/item-details';
 
@@ -28,7 +28,15 @@ export class ListPage {
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public carsService: CarServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingController: LoadingController,  public carsService: CarServiceProvider) {
+    //Load Spinner
+    let loading = this.loadingController.create({
+      spinner: 'bubbles',
+      content: 'Loading...'
+    });
+
+    loading.present();
+    
     carsService.getCarsList()
     .then(data =>{
       console.log("CarsService Then");
@@ -36,6 +44,7 @@ export class ListPage {
       console.log(this.carsList);
       
       this.carsList = data;
+      loading.dismiss();
     })
     
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
@@ -55,5 +64,14 @@ export class ListPage {
     this.navCtrl.push(ItemDetailsPage, {
       item: item
     });
+  }
+
+  presentLoadingBubbles() {
+    let loading = this.loadingController.create({
+      spinner: 'bubbles',
+      content: 'Loading...'
+    });
+
+    loading.present();
   }
 }
