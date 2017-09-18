@@ -1,112 +1,17 @@
-<!--
-  Generated template for the SettingsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
 <ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>MuscleCars</ion-title>
+    
+    
   </ion-navbar>
   <script src="cordova.js"></script>
 </ion-header>
 
-<ion-content padding>
+<ion-tabs [selectedIndex]="0">
+  <ion-tab [root]="tab1Root" tabTitle="Preferences" tabIcon="settings"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Reference Car" tabIcon="car"></ion-tab>
   
-  <h1 color="primary">Reference Car</h1>
-  
-
-    
-
-
-
-
-  <ion-grid>
-  
-    <ion-row>
-      <ion-col col-6>
-          <ion-item>
-              <ion-label floating>Indice Perf.</ion-label>
-                <ion-input type="number" [(ngModel)]="refCar.Indice_Perf" name="Indice_Perf" ></ion-input>
-            </ion-item>
-    
-      </ion-col>
-
-      <ion-col col-6>
-        <ion-item>
-          <ion-label floating>Cylindres</ion-label>
-          <ion-input type="number" [(ngModel)]="refCar.Cylindres" name="cylindres" ></ion-input>
-        </ion-item> 
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-    <ion-item>
-      <ion-label>Cylindree (L)</ion-label>
-        <ion-input type="number" [(ngModel)]="refCar.Cylindree" name="cylindree"></ion-input>
-    </ion-item>
-
-    <ion-grid>
-      <ion-row>
-        <ion-col col-7>
-          <ion-item>
-            <ion-label floating>Puissance (Ch/HP)</ion-label>
-              <ion-input type="number" [(ngModel)]="refCar.Puissance_ch" name="puissance" ></ion-input>
-          </ion-item>
-        </ion-col>
-        
-        <ion-col col-5>
-          <ion-item>
-            <ion-label floating>Couple (N.m-1)</ion-label>
-              <ion-input type="number" [(ngModel)]="refCar.Couple_Nm" name="couple" ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    <br>
-    <ion-item>
-        <ion-label>V. Max (Km/h)</ion-label>
-        <ion-input type="number" [(ngModel)]="refCar.VitesseMax_Kmh" name="vmax"></ion-input>
-    </ion-item> 
-
-    <ion-grid>
-      <ion-row>
-        <ion-col col-6>
-          <ion-item>
-            <ion-label floating>acc. 0-100</ion-label>
-              <ion-input type="number" [(ngModel)]="refCar.acc_0_100" name="acc_0_100" ></ion-input>
-          </ion-item>
-        </ion-col>
-        
-        <ion-col col-6>
-          <ion-item>
-            <ion-label floating>acc. 0-200</ion-label>
-              <ion-input type="number" [(ngModel)]="refCar.acc_0_200" name="acc_0_200" ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    <ion-row>
-      <ion-col col-6>
-        <ion-item>
-          <ion-label floating>400m DA</ion-label>
-            <ion-input type="number" [(ngModel)]="refCar.acc_400m_DA" name="acc_400_da"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col col-6>
-          <ion-item>
-          <ion-label floating>1000m DA</ion-label>
-            <ion-input type="number" [(ngModel)]="refCar.acc_1000m_DA" name="acc_1000_da"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-      </ion-grid>
-  
-      
-
-        <button ion-button full color="danger" (tap)="saveReferenceCar()">Save</button>
-        <button ion-button full color="primary">Retour</button>
-  </ion-content>
+</ion-tabs>

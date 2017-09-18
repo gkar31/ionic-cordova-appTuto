@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>MuscleCars</ion-title>
+    
+    
+  </ion-navbar>
+  <script src="cordova.js"></script>
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Preferences</h1>
+  <br>
+  <ion-list radio-group [(ngModel)]="prefSpeed">
+    <ion-list-header>
+      Vitesse / Speed ({{prefSpeed}})
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Km/h</ion-label>
+      <ion-radio checked="true" value="kmh"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>MPH</ion-label>
+      <ion-radio checked="false" value="mph"></ion-radio>
+    </ion-item>
+
+
+    </ion-list>
+
+    <ion-list radio-group>
+      <ion-list-header>
+        Couple Moteur/ Torque
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Nm</ion-label>
+        <ion-radio checked="true"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Ft-lb</ion-label>
+        <ion-radio checked="false"></ion-radio>
+      </ion-item>
+  
+  
+      </ion-list>
+
+      <ion-list radio-group>
+        <ion-list-header>
+          Prix / Price
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>Euros</ion-label>
+          <ion-radio checked="true"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Dollars</ion-label>
+          <ion-radio checked="false"></ion-radio>
+        </ion-item>
+    
+    
+        </ion-list>
+        <button ion-button full color="danger" (tap)="saveUserPreferences()">Save</button>
+        <button ion-button full color="primary">Retour</button>
+</ion-content>
+
