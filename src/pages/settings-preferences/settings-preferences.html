@@ -14,9 +14,9 @@
 <ion-content padding>
   <h1>Preferences</h1>
   <br>
-  <ion-list radio-group [(ngModel)]="prefSpeed">
+  <ion-list radio-group [(ngModel)]="prefUser.prefSpeedUnit">
     <ion-list-header>
-      Vitesse / Speed ({{prefSpeed}})
+      Vitesse / Speed ({{prefUser.prefSpeedUnit}})
     </ion-list-header>
 
     <ion-item>
@@ -32,37 +32,37 @@
 
     </ion-list>
 
-    <ion-list radio-group>
+    <ion-list radio-group [(ngModel)]="prefUser.prefTorqueUnit">
       <ion-list-header>
         Couple Moteur/ Torque
       </ion-list-header>
   
       <ion-item>
         <ion-label>Nm</ion-label>
-        <ion-radio checked="true"></ion-radio>
+        <ion-radio checked="true" value="nm"></ion-radio>
       </ion-item>
   
       <ion-item>
         <ion-label>Ft-lb</ion-label>
-        <ion-radio checked="false"></ion-radio>
+        <ion-radio checked="false" value="ft"></ion-radio>
       </ion-item>
   
   
       </ion-list>
 
-      <ion-list radio-group>
+      <ion-list radio-group [(ngModel)]="prefUser.prefPriceUnit">
         <ion-list-header>
           Prix / Price
         </ion-list-header>
     
         <ion-item>
           <ion-label>Euros</ion-label>
-          <ion-radio checked="true"></ion-radio>
+          <ion-radio checked="true" value="eur"></ion-radio>
         </ion-item>
     
         <ion-item>
           <ion-label>Dollars</ion-label>
-          <ion-radio checked="false"></ion-radio>
+          <ion-radio checked="false" value="usd"></ion-radio>
         </ion-item>
     
     

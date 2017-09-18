@@ -21,11 +21,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SettingsPreferencesPage {
   prefUser={
     prefSpeedUnit : String,
-    prefCoupleUnit : String   
+    prefTorqueUnit : String,
+    prefPriceUnit : String   
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage) {
-  }
+    
+
+    this.loadUserPreferences();
+
+    
+    }
+
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPreferencesPage');
@@ -35,8 +43,8 @@ export class SettingsPreferencesPage {
   saveUserPreferences():void {
     this.nativeStorage.setItem('MC-PrefUser', {prefUser: this.prefUser})
   .then(
-    () => console.log('ReferenceCar Stored!'),
-    error => console.error('Error storing ReferenceCar', error)
+    () => console.log('User Preferences Stored!'),
+    error => console.error('Error storing User Preferences', error)
   );
   }
 
@@ -46,6 +54,9 @@ export class SettingsPreferencesPage {
   .then(
     data => {
       console.log(data);
+      if(data === null){
+        console.log("No User preferences stored");
+      }
       if(data){
       this.prefUser = data.prefUser;
       }
