@@ -36,6 +36,10 @@ export class SettingsPage {
   prefSpeedUnit="";
   prefCoupleUnit="";
 
+  tab1Root='SettingsPreferencesPage';
+  tab2Root='SettingsRefCarPage';
+  currentTabIndex: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage) {
       
   }
