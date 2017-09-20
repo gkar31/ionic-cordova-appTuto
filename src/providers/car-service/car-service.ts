@@ -43,4 +43,18 @@ export class CarServiceProvider {
     });
   });
   }
+
+
+  convertKmhToMph(value):any {
+    var kmh = value;
+    var mph = kmh / 1.6 ;
+    return mph.toString();
+  }
+
+
+  convertMphToKmh(value):any {
+    var mph = value;
+    var kmh = mph * 1.6 ;
+    return kmh.toString();
+  }
 }

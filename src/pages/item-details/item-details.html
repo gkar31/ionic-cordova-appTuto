@@ -9,9 +9,17 @@
 
 <ion-content>
   <div text-center *ngIf="selectedItem" >
+      
    <button ion-button full>{{selectedItem.Marque}}&nbsp;{{selectedItem.Modele}}&nbsp;{{selectedItem.Serie}}</button>
   </div>
-
+  {{strStep}}
+  <div *ngIf="doesDisplayKmh">
+    KM.H
+  </div>
+  <div *ngIf="!doesDisplayKmh">
+      MPH
+    </div>
+    
   <h3>
     
         <ion-badge color="primary">V{{selectedItem.Cylindres}}</ion-badge>
@@ -25,7 +33,13 @@
   <h3>
     <ion-col col-lg-4>
       <ion-badge color="dark">Vitesse max&nbsp;</ion-badge>
-      <ion-badge color="danger">{{selectedItem.VitesseMax_Kmh}} km/h</ion-badge>
+      
+        <ion-badge *ngIf="doesDisplayKmh" color="danger">{{selectedItem.VitesseMax_Kmh}} km/h</ion-badge>
+    
+
+    
+      <ion-badge *ngIf="!doesDisplayKmh" color="danger">{{vitesseMax_Mph}} Mph</ion-badge>
+  
     </ion-col>
 <br>
 <ion-col col-lg-3 col-lg-offset-1>

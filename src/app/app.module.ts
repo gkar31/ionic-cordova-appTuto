@@ -14,11 +14,14 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { SettingsPage } from '../pages/settings/settings';
 import { RaceResultPage } from '../pages/race-result/race-result'
+
+
  
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CarServiceProvider } from '../providers/car-service/car-service';
+import { UserDataServiceProvider } from '../providers/user-data-service/user-data-service';
 
 
 @NgModule({
@@ -50,7 +53,8 @@ import { CarServiceProvider } from '../providers/car-service/car-service';
     SpeechRecognition,
     NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CarServiceProvider
+    CarServiceProvider,
+    UserDataServiceProvider
   ]
 })
 export class AppModule {}
