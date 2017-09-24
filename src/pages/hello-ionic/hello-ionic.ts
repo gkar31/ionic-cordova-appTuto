@@ -109,6 +109,10 @@ export class HelloIonicPage {
  
     }
  
+ionViewDidAppear(){
+  this.searchTerm="";
+}
+
     onSearchInput(){
         this.searching = true;
     }

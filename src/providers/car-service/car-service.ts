@@ -48,13 +48,28 @@ export class CarServiceProvider {
   convertKmhToMph(value):any {
     var kmh = value;
     var mph = kmh / 1.6 ;
-    return mph.toString();
+    return mph.toFixed(0).toString();
   }
 
 
   convertMphToKmh(value):any {
     var mph = value;
     var kmh = mph * 1.6 ;
-    return kmh.toString();
+    return kmh.toFixed(0).toString();
   }
+
+  convertNmToFtLb(value):any {
+    var nm = value;
+    var ftlb = nm / 0.7 ;
+    return ftlb.toFixed(0).toString();
+  }
+
+
+  convertFtLbToNm(value):any {
+    var ftlb = value;
+    var nm = ftlb * 0.7 ;
+    return nm.toString();
+  }
+
+
 }

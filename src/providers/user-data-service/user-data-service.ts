@@ -50,11 +50,20 @@ export class UserDataServiceProvider {
 
   
 
-  saveUserPreferences(prefUserValues):void {
+  saveUserPreferences(prefUserValues):any {
+    this.prefUser = prefUserValues;
     this.nativeStorage.setItem('MC-PrefUser', {prefUser: prefUserValues})
   .then(
-    () => console.log('User Preferences Stored!'),
-    error => console.error('Error storing User Preferences', error)
+    () => {
+      console.log('User Preferences Stored!');
+      return "";
+    }
+      ,
+
+    error => {
+      console.error('Error storing User Preferences', error);
+      return error;
+    }
   );
   }
 
@@ -68,7 +77,7 @@ export class UserDataServiceProvider {
         console.log("No User preferences stored");
       }
       if(data){
-      this.prefUser = data.prefUser;
+        this.prefUser = data.prefUser;
       }
     },
     error => console.error(error)
@@ -106,6 +115,12 @@ getSpeedUnit():any {
 
   return this.prefUser.prefSpeedUnit.toString();
 }
+
+getTorqueUnit():any {
+  
+    return this.prefUser.prefTorqueUnit.toString();
+  }
+
 
 }
 

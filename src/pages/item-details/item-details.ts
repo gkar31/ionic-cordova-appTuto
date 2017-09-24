@@ -13,8 +13,10 @@ export class ItemDetailsPage {
   selectedItem: any;
   prefsUser: any;
   doesDisplayKmh: boolean = true;
+  doesDisplayNm: boolean = true;
   strStep: any;
   vitesseMax_Mph: Number;
+  Couple_FtLb: Number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private userDataService: UserDataServiceProvider, private carService: CarServiceProvider) {
     // If we navigated to this page, we will have an item available as a nav param
@@ -27,9 +29,16 @@ export class ItemDetailsPage {
       this.strStep="etape02";
 
       this.prefsUser = this.userDataService.prefUser;
+
+      //Display Speed
       this.doesDisplayKmh= this.userDataService.getSpeedUnit() ==="kmh" ;
       this.strStep="etape03:"+this.doesDisplayKmh;
       this.vitesseMax_Mph = this.carService.convertKmhToMph(this.selectedItem.VitesseMax_Kmh);
+
+      //Display Torque
+      this.doesDisplayNm= this.userDataService.getTorqueUnit() ==="nm" ;
+      this.strStep="etape04:"+this.doesDisplayNm;
+      this.Couple_FtLb = this.carService.convertNmToFtLb(this.selectedItem.Couple_Nm);
   }
 
   ionViewDidLoad() {

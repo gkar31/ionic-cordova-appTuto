@@ -25,7 +25,8 @@
         <ion-badge color="primary">V{{selectedItem.Cylindres}}</ion-badge>
           <ion-badge color="primary">{{selectedItem.Cylindree}} litres</ion-badge>
             <ion-badge color="primary">{{selectedItem.Puissance_ch}} ch</ion-badge>
-              <ion-badge color="primary">{{selectedItem.Couple_Nm}} N.m<sup>-1</sup></ion-badge>
+              <ion-badge *ngIf="doesDisplayNm" color="primary">{{selectedItem.Couple_Nm}} N.m<sup>-1</sup></ion-badge>
+              <ion-badge *ngIf="!doesDisplayNm" color="primary">{{Couple_FtLb}} ft-lb</ion-badge>
         <!-- a href="{{zeperf_link}}" hrefext class="btn btn-success col-lg-offset-8">get Infos <span class="glyphicon glyphicon-info-sign"></span></a -->
     
     </h3>
