@@ -109,9 +109,10 @@ export class HelloIonicPage {
  
     }
  
-ionViewDidAppear(){
-  this.searchTerm="";
-}
+    ionViewWillEnter(){
+    this.searchTerm="";
+    this.setFilteredItems();
+  }
 
     onSearchInput(){
         this.searching = true;
@@ -212,7 +213,7 @@ public stopListening(): void {
       
         return this.dragRaceCarsList.filter((item) => {
           //console.log("Item :"+item.Marque);
-            return item.Marque.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 || item.Modele.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 || item.Serie.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+            return item.Marque.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 || item.Modele.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ;//|| item.Serie.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
         });     
  
     }
